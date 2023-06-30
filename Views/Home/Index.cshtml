@@ -1,0 +1,329 @@
+﻿@{
+    var mp = ViewData["most"] as List<Property>;
+    var bb = ViewData["beauty"] as List<Property>;
+    var lb = ViewData["LargeRoom"] as List<Property>;
+    var ks = ViewData["kitchen"] as List<Property>;
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+
+<!-- ======= Hero Section ======= -->
+
+
+<section id="about" class="about" style="margin-top:20vh">
+    <div class="container">
+
+
+        <div class="row">
+
+            <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0" style="padding-right:3vw;padding-left:6vw">
+                <h3 data-aos="fade-up" style="color:darkblue;font-weight:400">Forget Busy Work, Start Next Vacation</h3>
+                <p data-aos="fade-up">
+                    We provide what you need to enjoy your holiday with Family.<br />Time to make another memorable moment.
+                </p>
+                <p>
+                    <button class="btn btn-primary" style="margin-bottom:7vh;color:white;">Show me Now</button>
+                </p>
+                <div class="icon-box">
+                    <!--<i class="bx bx-receipt"></i>-->
+
+
+
+
+                    <div style="display:flex;justify-content:space-between; ">
+
+                        <div>
+                            <span>
+                                <img src="~/img/travel.png" class="img-fluid" alt="travel"><br />
+                                <small><b>80,409</b> travellers</small>
+                            </span>
+
+                        </div>
+
+                        <div>
+                            <span style="margin-right:3vw">
+                                <img src="~/img/treasure.png" class="img-fluid" alt="treasures"><br />
+                                <small><b>862</b> treasures</small>
+                            </span>
+                        </div>
+
+                        <div>
+                            <span style="margin-right:4vw">
+                                <img src="~/img/cities.png" class="img-fluid" alt="location"><br />
+                                <small><b>1,482</b>cities</small>
+                            </span>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="col-xl-6 col-lg-7" data-aos="fade-right">
+                <img src="~/img/banner.png" class="img-fluid" alt="" width="400vw" height="400vh" style=" border-radius: 100px 15px 15px 15px;">
+            </div>
+
+        </div>
+
+    </div>
+</section><!-- End About Section -->
+<!-- ======= Most picks ======= -->
+<section id="steps" class="steps section-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Most Picks</h4>
+            </div>
+        </div>
+
+        <div style="display:flex;flex-direction:row;justify-content:space-around">
+
+            <div style="position:relative;" col-4>
+                <img src="~/img/@mp[0].Pic" class="img-fluid" alt="" width="inherit" height="inherit" style="border-radius:20px;" data-aos="fade-in">
+                <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@mp[0].PropName, @mp[0].Location,Indonesia</span>
+                <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@mp[0].Price per night</span>
+            </div> 
+            
+            <div class="row no-gutters col-8">
+                @foreach(var property in mp)
+            {
+                @if(property == mp[0] )
+                {
+                    continue; 
+                }
+                else
+                {
+                    
+                        <div class="col-lg-6 col-md-6" data-aos="fade-in">
+                            <div style="position:relative;">
+                                <img src="~/img/@property.Pic" class="img-fluid" alt="" width="inherit" height="inherit" style="border-radius:20px;" data-aos="fade-in">
+                                <span style="position:absolute; bottom:10px; left:10px; background-color:white; padding:5px 10px; border-radius:10px; color:black; font-weight:bold;">@property.PropName, @property.Location, Indonesia</span>
+                                <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">$@property.Price per night</span>
+                            </div>
+                        </div>
+   
+                }
+            }
+            </div>
+
+
+
+        </div>
+</section><!-- End Most Picks -->
+<!-- ======= Houses with beauty Backyards ======= -->
+<section id="steps" class="steps section-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Houses with beautiful Backyards</h4>
+            </div>
+        </div>
+
+
+        <div style="display:flex;flex-direction:row;justify-content:space-between;text-align:center">
+           
+            <div class=" row no-gutters">
+                                                                 
+                <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
+                    <div style="position:relative;">
+                        <img src="~/img/@bb[0].Pic" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                        <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
+                    </div>
+                    <h6>@bb[0].PropName</h6>
+                    <p>@bb[0].Location, Indonesia</p>
+                </div>
+
+                @foreach(var property in bb)
+                {
+                    @if (property == bb[0])
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
+                            <img src="~/img/@property.Pic" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                            <h6>@property.PropName</h6>
+                            <p>@property.Location, Indonesia</p>
+                        </div>
+                    }
+                }
+                
+
+               @* <div class="col-lg-3 col-md-6 " data-aos="fade-left" data-aos-delay="100">
+                    <img src="~/img/B3.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                    <h6>Seattle Rain</h6>
+                    <p>Jakarta, Indonesia</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <img src="~/img/B4.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                    <h6>Wooden Pit</h6>
+                    <p>Wonosoba, Indonesia</p>
+                </div>
+*@
+            </div>
+
+
+        </div>
+
+    </div>
+</section><!-- End Houses with beauty Backyards -->
+<!-- ======= Hotels with large living rooms ======= -->
+<section id="steps" class="steps section-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Hotels with large living rooms</h4>
+            </div>
+        </div>
+
+
+        <div style="display:flex;flex-direction:row;justify-content:space-between;text-align:center">
+
+            <div class=" row no-gutters">
+
+
+                <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
+                    <img src="~/img/L1.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                    <h6>Green Park</h6>
+                    <p>Tangarang, Indonesia</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 " data-aos="fade-left" data-aos-delay="100">
+                    <img src="~/img/L2.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                    <h6>Podo Wae</h6>
+                    <p>Padiun, Indonesia</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <img src="~/img/L3.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                    <h6>Silver Rain</h6>
+                    <p>Bandung, Indonesia</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
+                    <div style="position:relative;">
+                        <img src="~/img/L4.png" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                        <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
+                    </div>
+                    <h6>Cashville</h6>
+                    <p>Kemang, Indonesia</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section><!-- Hotels with large living rooms -->
+<!-- =======  Apartments with Kitchen set ======= -->
+<section id="steps" class="steps section-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h4>Apartments with Kitchen set</h4>
+            </div>
+        </div>
+
+
+        <div style="display:flex;flex-direction:row;justify-content:space-between;text-align:center">
+
+            <div class=" row no-gutters">
+
+                <div class="col-lg-3 col-md-6 " data-aos="fade-right" data-aos-delay="100">
+                    <img src="~/img/K1.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                    <h6>PS Wood</h6>
+                    <p>Depok, Indonesia</p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 " data-aos="fade-left" data-aos-delay="100">
+                    <img src="~/img/K2.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                    <h6>One Five</h6>
+                    <p>Jakarta, Indonesia</p>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-left" data-aos-delay="100">
+                    <div style="position:relative;">
+                        <img src="~/img/K3.png" class="img-fluid" alt="" style="border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                        <span style="position:absolute; top:10px; right:10px; background-color:deeppink; padding:5px 10px; border-radius:10px; color:white; font-weight:bold;">Popular choice</span>
+                    </div>
+                    <h6>Minimal </h6>
+                    <p>Bogor, Indonesia</p>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <img src="~/img/K4.png" class="img-fluid" alt="" width="inherit" height="inherit" style=" border-radius:20px;height:30vh;width:250vw;" data-aos="fade-in">
+                    <h6>Stays Home</h6>
+                    <p>Wonosoba, Indonesia</p>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</section><!-- Apartments with Kitchen set -->
+
+<section id="about" class="about" style="margin-top:20vh">
+    <div class="container">
+
+
+        <div class="row">
+
+
+            <div class="col-xl-6 col-lg-7" data-aos="fade-right">
+                <img src="~/img/last.png" class="img-fluid" alt="" width="400vw" height="400vh" style=" border-radius: 100px 15px 15px 15px;">
+            </div>
+
+
+            <div class="col-xl-6 col-lg-5 pt-5 pt-lg-0" style="padding-left:6vw;margin-left:-10vw">
+                <h5 data-aos="fade-up" style="color:navy;font-weight:600">Happy Family</h5>
+
+                <div class="col-lg-3 col-md-6" data-aos="fade-right" data-aos-delay="100">
+                    <img src="~/img/StarStar.png" class="img-fluid" alt="" width="inherit" height="inherit" style="height:4vh;width:20vw;" data-aos="fade-in">
+                   
+                    
+                </div>
+                <p data-aos="fade-up">
+                   <h4> What a great trip with my family and<br/>I should try again next time soon...</h4>
+
+                </p>
+                <p>
+                    Angga, Product Designer
+                </p>
+                <p>
+                    <button class="btn btn-primary" style="margin-top:6vh;margin-bottom:7vh;color:white;">Show me Now</button>
+                </p>
+                <div class="icon-box">
+                    <!--<i class="bx bx-receipt"></i>-->
+
+
+
+
+                   
+
+
+
+                
+
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+</section><!-- End About Section -->

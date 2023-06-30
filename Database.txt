@@ -1,0 +1,17 @@
+| Jakarta    | Blue Origin Fams | 50 | MostPick1.png | Most Picks                      |                |
+| Bandung    | Ocean Land       | 22 | item 1.png    | Most Picks                      |                |
+| Malang     | Stark House      |856 | item 3.png    | Most Picks                      |                |
+| Malang     | Vinna Vill       | 62 | item 2.png    | Most Picks                      |                |
+| Medan      | Bobox            | 72 | item 4.png    | Most Picks                      |                |
+| Gunung Batu| Shabby Town      |    | B1.png        | Houses with beautiful Backyards | Popular Choice |
+| Bogor      | Anganna          |    | B2.png        | Houses with beautiful Backyards |                |
+| Jakarta    | Seattle Rain     |    | B3.png        | Houses with beautiful Backyards |                |
+| Wonosoba   | Wooden Pit       |    | B4.png        | Houses with beautiful Backyards |                |
+| Tangarang  | Green Park       |    | L1.png        | Hotels with large living rooms  | Popular Choice |
+| Padiun     | Podo Wae         |    | L2.png        | Hotels with large living rooms  |                |
+| Bandung    | Silver Rain      |    | L3.png        | Hotels with large living rooms  |                |
+| Kemang     | Cashville        |    | L4.png        | Hotels with large living rooms  |                |
+| Depok      | PS Wood          |    | K1.png        | Apartments with Kitchen set     |                |
+| Jakarta    | One Five         |    | K2.png        | Apartments with Kitchen set     |                |
+| Bogor      | Minimal          |    | K3.png        | Apartments with Kitchen set     | Popular Choice |
+| Wonosoba   | Stays Home       |    | K4.png        | Apartments with Kitchen set     |                |
